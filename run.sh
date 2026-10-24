@@ -26,7 +26,7 @@ npub=\$(sonos convert \$pubkey npub)
 xmr_address=\$(jq -r '.content' \$1 | grep tip | sed -n -e 's/\(^\|\(.*\s\)\)#xmr\s\(.\+\)\(\(\s.*\)\|$\)/\3/pi')
 [ -z \$xmr_address ] && exit 0
 
-out_json=\$(curl -s -X POST http://127.0.0.1:28088/json_rpc -d "{\"jsonrpc\":\"2.0\",\"id\":\"0\",\"method\":\"transfer\",\"params\":{\"destinations\":[{\"amount\":1000000000000,\"address\":\"\$xmr_address\"}],\"get_tx_key\": true}}" -H "Content-Type: application/json")
+out_json=\$(curl -s -X POST http://127.0.0.1:28088/json_rpc -d "{\"jsonrpc\":\"2.0\",\"id\":\"0\",\"method\":\"transfer\",\"params\":{\"destinations\":[{\"amount\":0100000000000,\"address\":\"\$xmr_address\"}],\"get_tx_key\": true}}" -H "Content-Type: application/json")
 [ -z "\$out_json" ] && exit 1
 echo "\$out_json"
 tx_key=\$(echo \$out_json | jq -r '.result.tx_key')
@@ -39,7 +39,7 @@ tags="[\"e\",\"\$event_id\",\"\",\"reply\"],[\"p\",\"\$pubkey\",\"\",\"mention\"
 sonos event $bot_nsec 1 \$tags \$relays << EOF
 Hi nostr:\$npub !!
 I am Monero StageNet Faucet Bot using Sonos (https://github.com/bvcxza/nostr-monero-bot).
-I transfered 1 XMR to \$xmr_address
+I transfered 0.1 XMR to \$xmr_address
 tx_key: \$tx_key
 Bye
 EOF
