@@ -37,10 +37,22 @@ podman container logs -f nostr-monero-bot
 podman container kill nostr-monero-bot
 ```
 
+## Fund bot wallet
+
+- https://cypherfaucet.com/xmr-stagenet
+- https://stagenet-faucet.xmr-tw.org
+
+Or try my bot instance if it is running:
+
+```
+hi nostr:npub16qj8ud2yl9dc3854k29duj3c2y9phnlmvh6rpav33fhzxlrz5cwswlerec
+
+tip #xmr <xmr address 5.../7...>
+```
+
 ## References
 
-https://docs.podman.io/en/latest/markdown/podman-image-trust.1.html
-https://hub.docker.com/r/nixos/nix
-https://docs.docker.com/reference/dockerfile/
-https://cypherfaucet.com/xmr-stagenet
+- https://docs.podman.io/en/latest/markdown/podman-image-trust.1.html
+- https://hub.docker.com/r/nixos/nix
+- https://docs.docker.com/reference/dockerfile/
 
