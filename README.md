@@ -1,4 +1,4 @@
-# Monero StageNet Faucet Bot using Sonos
+# Monero Stagenet Faucet Bot using Sonos
 
 Proof of Concept Monero Stagenet Faucet Bot using [Sonos](https://github.com/bvcxza/sonos). Proposed in [Documentation or tooling for nostr wallet bot setup](https://bounties.monero.social/posts/163/4-029m-documentation-or-tooling-for-nostr-wallet-bot-setup).
 
@@ -34,6 +34,7 @@ podman run -d --name nostr-monero-bot --replace -v ~/.local/share/nostr-monero-b
 ```
 podman container list
 podman container logs -f nostr-monero-bot
+podman container logs nostr-monero-bot | grep "Bot npub"
 podman container kill nostr-monero-bot
 ```
 
@@ -42,7 +43,7 @@ podman container kill nostr-monero-bot
 - https://cypherfaucet.com/xmr-stagenet
 - https://stagenet-faucet.xmr-tw.org
 
-Or try my bot instance if it is running:
+Or try my bot instance, if it is running, posting this text note on nostr:
 
 ```
 hi nostr:npub16qj8ud2yl9dc3854k29duj3c2y9phnlmvh6rpav33fhzxlrz5cwswlerec
